@@ -9,7 +9,7 @@ import (
 	"runtime"
 	"runtime/debug"
 
-	"github.com/NVIDIA/nvidia-docker/tools/src/nvidia"
+	"github.com/jsmith50500/nvidia-docker/tools/src/nvidia"
 )
 
 var (
