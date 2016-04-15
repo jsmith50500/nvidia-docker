@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/NVIDIA/nvidia-docker/tools/src/docker"
-	"github.com/NVIDIA/nvidia-docker/tools/src/nvidia"
+	"github.com/jsmith50500/nvidia-docker/tools/src/docker"
+	"github.com/jsmith50500/nvidia-docker/tools/src/nvidia"
 )
 
 func CreateLocalVolumes() error {
