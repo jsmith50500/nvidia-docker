@@ -20,7 +20,7 @@ RUN wget -O gdk.run -q http://developer.download.nvidia.com/compute/cuda/7.5/Pro
     chmod +x gdk.run && ./gdk.run --silent && rm gdk.run
 
 VOLUME /go/bin
-WORKDIR /go/src/github.com/NVIDIA/nvidia-docker/tools/src
+WORKDIR /go/src/github.com/jsmith50500/nvidia-docker/tools/src
 COPY src .
 
 ENV CGO_CFLAGS "-I /usr/local/cuda-6.5/include -I /usr/include/nvidia/gdk"
