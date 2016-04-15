@@ -12,6 +12,7 @@ import (
 	"io/ioutil"
 	"strconv"
 	"strings"
+	"log"
 )
 
 const (
@@ -210,7 +211,14 @@ func NewDevice(idx uint) (device *Device, err error) {
 	assert(C.nvmlDeviceGetMaxPcieLinkWidth(dev, &pciel[1]))
 
 	busID := C.GoString(&pci.busId[0])
-	b, err := ioutil.ReadFile(fmt.Sprintf("/sys/bus/pci/devices/%s/numa_node", strings.ToLower(busID)))
+	//b, err := ioutil.ReadFile(fmt.Sprintf("/sys/bus/pci/devices/%s/numa_node", strings.ToLower(busID)))
+	 
+        log.Println("Does CPU Evaluate")
+        b, err := ioutil.ReadFile(fmt.Sprintf("/sys/bus/pci/devices/0000:07:00.0/numa_node", strings.ToLower(busID)))
+        log.Println(b)
+
+	
+	
 	if err != nil || len(b) == 0 {
 		return nil, ErrCPUAffinity
 	}
